@@ -1,0 +1,103 @@
+admitere_staging:
+  hosts:
+    admitere-staging.unibuc.ro:
+
+admitere_production:
+  hosts:
+    admitere.fspub.unibuc.ro:
+    admitere.faa.unibuc.ro:
+    admitere.sas.unibuc.ro:
+    admonline.lls.unibuc.ro:
+
+admitere:
+  children:
+    admitere_staging:
+    admitere_production:
+
+elk:
+  hosts:
+    10.121.130.100:
+
+focus:
+  hosts:
+    icub-cercetare.unibuc.ro:
+
+helpdesk_staging:
+  hosts:
+    staging.helpdesk.unibuc.ro:
+
+helpdesk_production:
+  hosts:
+    helpdesk.unibuc.ro:
+
+helpdesk:
+  children:
+    helpdesk_staging:
+    helpdesk_production:
+
+mso:
+  hosts:
+    mso.unibuc.ro:
+
+mao:
+  hosts:
+    mao.unibuc.ro:
+
+mp_staging:
+  hosts:
+    staging.mp.unibuc.ro:
+
+mp_production:
+  hosts:
+    mp.unibuc.ro:
+
+idp:
+  hosts:
+    idp.unibuc.ro:
+
+sharepoint_wordpress_integration:
+  hosts:
+    sharepoint-wordpress.unibuc.ro:
+
+fmi_cms:
+  hosts:
+    10.121.26.26:
+    10.121.27.27:
+
+kubernetes_sinaia:
+  hosts:
+    10.45.4.100:
+    10.45.4.101:
+    10.45.4.102:
+
+kubernetes:
+  children:
+    kubernetes_sinaia:
+
+ojs:
+  hosts:
+    10.45.4.48:
+
+inscriere:
+  hosts:
+    10.45.4.55:
+
+staging:
+  children:
+    admitere_staging:
+    helpdesk_staging:
+    mp_staging:
+
+production:
+  children:
+    admitere_production:
+    focus:
+    helpdesk_production:
+    mso:
+    mao:
+    mp_production:
+    sharepoint_wordpress_integration:
+    idp:
+    fmi_cms:
+    ojs:
+    inscriere:
