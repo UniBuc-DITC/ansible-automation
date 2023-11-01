@@ -51,6 +51,11 @@ mp_production:
   hosts:
     mp.unibuc.ro:
 
+mp:
+  children:
+    mp_staging:
+    mp_production:
+
 idp:
   hosts:
     idp.unibuc.ro:
