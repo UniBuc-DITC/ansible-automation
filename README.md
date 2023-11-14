@@ -9,5 +9,5 @@ Most playbooks should be run with the file `inventory.yaml` used as an [inventor
 ### Updating package dependencies on a host or set of hosts
 
 ```sh
-ansible-playbook -v -i inventory.yaml update-packages.yaml --extra-vars "variable_host='<host>'"
+ansible-playbook -v -i inventory.yaml update-packages.playbook.yaml --extra-vars "variable_host='<host>'"
 ```
