@@ -43,19 +43,6 @@ mao:
   hosts:
     mao.unibuc.ro:
 
-mp_staging:
-  hosts:
-    staging.mp.unibuc.ro:
-
-mp_production:
-  hosts:
-    mp.unibuc.ro:
-
-mp:
-  children:
-    mp_staging:
-    mp_production:
-
 idp:
   hosts:
     idp.unibuc.ro:
@@ -91,7 +78,6 @@ staging:
   children:
     admitere_staging:
     helpdesk_staging:
-    mp_staging:
 
 production:
   children:
@@ -100,7 +86,6 @@ production:
     helpdesk_production:
     mso:
     mao:
-    mp_production:
     sharepoint_wordpress_integration:
     idp:
     fmi_cms:
