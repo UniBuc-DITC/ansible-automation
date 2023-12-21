@@ -38,7 +38,13 @@ The commands listed below assume that you have, at the very least, configured th
 ansible '<host>' -m ansible.builtin.shell -a '<some command>'
 ```
 
-### Updating package dependencies on a host or set of hosts
+### Checking for system package updates
+
+```sh
+ansible-playbook check-for-updates.playbook.yaml --extra-vars "variable_host='<host>'"
+```
+
+### Updating system packages
 
 ```sh
 ansible-playbook -v update-packages.playbook.yaml --extra-vars "variable_host='<host>'"

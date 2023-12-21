@@ -1,0 +1,23 @@
+---
+- name: Check for updates
+  hosts: "{{ variable_host | default('all') }}"
+  gather_facts: false
+  remote_user: root
+
+  tasks:
+    - name: Update apt package lists
+      become: true
+      apt:
+        update_cache: true
+        upgrade: "no"
+
+    - name: Check for updates
+      become: true
+      apt:
+        upgrade: full
+      check_mode: true
+      register: apt_output
+
+    - name: Print update info
+      debug:
+        var: apt_output.stdout_lines
