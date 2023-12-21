@@ -18,9 +18,18 @@ admitere:
     admitere_staging:
     admitere_production:
 
+bd_cfp:
+  hosts:
+    bd-cfp.unibuc.ro:
+
 elk:
   hosts:
-    10.121.130.100:
+    ELK:
+      ansible_host: 10.121.130.100
+
+evaluare:
+  hosts:
+    evaluare.ftb.unibuc.ro:
 
 focus:
   hosts:
@@ -62,9 +71,12 @@ fmi_cms:
 
 kubernetes_sinaia:
   hosts:
-    10.45.4.100:
-    10.45.4.101:
-    10.45.4.102:
+    sinaia1:
+      ansible_host: 10.45.4.100
+    sinaia2:
+      ansible_host: 10.45.4.101
+    sinaia3:
+      ansible_host: 10.45.4.102
 
 kubernetes:
   children:
@@ -86,6 +98,8 @@ staging:
 production:
   children:
     admitere_production:
+    bd_cfp:
+    evaluare:
     focus:
     helpdesk_production:
     mso:
