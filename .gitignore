@@ -1,0 +1,2 @@
+# Ignore Ansible config file loaded from current directory
+/ansible.cfg
