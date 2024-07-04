@@ -8,7 +8,9 @@ admitere_staging:
 
 admitere_production:
   hosts:
-    admitere.fspub.unibuc.ro:
+    admission.unibuc.ro:
+    admitere-rp.unibuc.ro:
+    admitere.fsp.unibuc.ro:
     admitere.faa.unibuc.ro:
     admitere.sas.unibuc.ro:
     admonline.lls.unibuc.ro:
